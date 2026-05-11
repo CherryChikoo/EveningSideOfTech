@@ -1,0 +1,290 @@
+/* ===== SERVICES PAGE SCOPED STYLES ===== */
+
+.services-page {
+  --phase-ease: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* ---- Phase Tab Navigation ---- */
+.phase-tabs {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2.5rem;
+}
+
+.phase-tab {
+  position: relative;
+  display: flex;
+  align-items: baseline;
+  gap: 0.4rem;
+  padding: 0.75rem 0;
+  cursor: pointer;
+  background: none;
+  border: none;
+  font-size: clamp(1.5rem, 3vw, 2.2rem);
+  font-weight: 400;
+  letter-spacing: -0.02em;
+  color: oklch(0.97 0.01 160 / 0.35);
+  transition: color 0.5s var(--phase-ease);
+  white-space: nowrap;
+}
+
+.phase-tab:hover {
+  color: oklch(0.97 0.01 160 / 0.6);
+}
+
+.phase-tab.active {
+  color: oklch(0.97 0.01 160 / 0.95);
+}
+
+.phase-tab-number {
+  font-size: 0.55em;
+  font-weight: 500;
+  color: oklch(0.88 0.15 165 / 0.7);
+  vertical-align: super;
+  transition: color 0.5s var(--phase-ease);
+}
+
+.phase-tab.active .phase-tab-number {
+  color: oklch(0.88 0.15 165);
+}
+
+/* Chevron indicator */
+.phase-tab-indicator {
+  position: absolute;
+  bottom: -0.25rem;
+  left: 50%;
+  transform: translateX(-50%);
+  color: oklch(0.88 0.15 165);
+  font-size: 0.75rem;
+  line-height: 1;
+}
+
+/* ---- Content Card ---- */
+.phase-content-card {
+  position: relative;
+  border: 1px solid oklch(0.3 0.02 160 / 0.25);
+  border-radius: 1.5rem;
+  background: linear-gradient(
+    180deg,
+    oklch(0.14 0.02 160 / 0.5),
+    oklch(0.12 0.02 160 / 0.7)
+  );
+  overflow: hidden;
+  padding: 3.5rem;
+}
+
+@media (max-width: 768px) {
+  .phase-content-card {
+    padding: 2rem 1.5rem;
+    border-radius: 1rem;
+  }
+}
+
+/* ---- Phase Title in Content ---- */
+.phase-content-title {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  margin-bottom: 1.25rem;
+}
+
+.phase-content-number {
+  font-size: clamp(1.1rem, 2vw, 1.5rem);
+  font-weight: 500;
+  color: oklch(0.88 0.15 165 / 0.7);
+  vertical-align: super;
+}
+
+.phase-content-name {
+  font-size: clamp(2rem, 4vw, 3.5rem);
+  font-weight: 300;
+  letter-spacing: -0.03em;
+  color: oklch(0.97 0.01 160);
+}
+
+/* ---- Accordion Styles ---- */
+.service-accordion-item {
+  border-bottom: 1px solid oklch(0.3 0.02 160 / 0.2);
+  transition: all 0.4s var(--phase-ease);
+}
+
+.service-accordion-item:last-child {
+  border-bottom: none;
+}
+
+.service-accordion-trigger {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 1.25rem 0;
+  cursor: pointer;
+  text-align: left;
+  background: none;
+  border: none;
+  color: oklch(0.97 0.01 160 / 0.85);
+  font-size: 1.05rem;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  transition: all 0.3s var(--phase-ease);
+  gap: 1rem;
+}
+
+.service-accordion-trigger:hover {
+  color: oklch(0.88 0.15 165);
+}
+
+.service-accordion-trigger.open {
+  color: oklch(0.88 0.15 165);
+}
+
+.service-accordion-icon {
+  width: 1.25rem;
+  height: 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  border: 1px solid oklch(0.3 0.02 160 / 0.35);
+  transition: all 0.4s var(--phase-ease);
+  flex-shrink: 0;
+}
+
+.service-accordion-trigger:hover .service-accordion-icon,
+.service-accordion-trigger.open .service-accordion-icon {
+  border-color: oklch(0.88 0.15 165 / 0.5);
+  background: oklch(0.88 0.15 165 / 0.08);
+}
+
+.service-accordion-content {
+  overflow: hidden;
+}
+
+.service-accordion-body {
+  padding-bottom: 1.25rem;
+  color: oklch(0.97 0.01 160 / 0.5);
+  font-size: 0.9rem;
+  line-height: 1.7;
+  max-width: 34rem;
+}
+
+/* ---- Case Study Card ---- */
+.case-study-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 1.25rem;
+  border: 1px solid oklch(0.3 0.02 160 / 0.2);
+  background: linear-gradient(
+    180deg,
+    oklch(0.15 0.02 160 / 0.5),
+    oklch(0.12 0.02 160 / 0.7)
+  );
+  transition: all 0.5s var(--phase-ease);
+  cursor: pointer;
+}
+
+.case-study-card:hover {
+  border-color: oklch(0.5 0.1 160 / 0.35);
+  transform: translateY(-3px);
+  box-shadow: 0 16px 50px -16px oklch(0.7 0.18 160 / 0.12),
+    inset 0 1px 0 oklch(0.6 0.1 160 / 0.08);
+}
+
+.case-study-card-image {
+  position: relative;
+  height: 12rem;
+  overflow: hidden;
+}
+
+.case-study-card-image::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    oklch(0.12 0.02 160 / 0.9),
+    transparent 60%
+  );
+}
+
+.case-study-card-body {
+  padding: 1.5rem;
+}
+
+.case-study-label {
+  font-family: var(--font-mono);
+  font-size: 0.6rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: oklch(0.88 0.15 165 / 0.65);
+  margin-bottom: 0.6rem;
+}
+
+/* ---- Big Statement ---- */
+.services-statement {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 60vh;
+  padding: 6rem 1.5rem;
+  overflow: hidden;
+  text-align: center;
+}
+
+.services-statement-glow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 500px;
+  height: 500px;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    oklch(0.4 0.14 160 / 0.2),
+    transparent 65%
+  );
+  filter: blur(60px);
+  pointer-events: none;
+}
+
+/* ---- Responsive ---- */
+@media (max-width: 768px) {
+  .phase-tabs {
+    gap: 1.5rem;
+  }
+
+  .phase-tab {
+    font-size: clamp(1.1rem, 4vw, 1.5rem);
+  }
+
+  .phase-content-card {
+    padding: 1.5rem;
+  }
+
+  .case-study-card-image {
+    height: 9rem;
+  }
+
+  .services-statement {
+    min-height: 45vh;
+    padding: 4rem 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .phase-tabs {
+    gap: 1rem;
+  }
+  
+  .phase-tab {
+    font-size: 1rem;
+  }
+
+  .service-accordion-trigger {
+    font-size: 0.95rem;
+    padding: 1rem 0;
+  }
+}
